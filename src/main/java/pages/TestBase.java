@@ -9,6 +9,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
@@ -26,7 +27,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 		
 	}
 
-	public void takeScreenshot(WebDriver driver) throws IOException{
+	public void takeScreenshot(WebDriver driver) throws Throwable  {
 		TakesScreenshot ts = (TakesScreenshot)driver;
 		
 	File sourceFile	= ts.getScreenshotAs(OutputType.FILE);

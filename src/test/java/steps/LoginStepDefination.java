@@ -21,7 +21,7 @@ public class LoginStepDefination extends TestBase {
 	@Before
 	public void beforeRun() {
 		initDriver();
-		loginPage = PageFactory.initElements(driver, LoginPage.class);
+		loginPage = PageFactory.initElements(driver,LoginPage.class);
 		databasepage = new Databasepage();
 		
 		}
@@ -33,13 +33,13 @@ public class LoginStepDefination extends TestBase {
 	}
 
 	@When("^User enters username as \"([^\"]*)\"$")
-	public void user_enters_username_as(String username)   {
-		loginPage = PageFactory.initElements(driver, LoginPage.class);
-		 loginPage.enterUserName(username);
+	public void user_enters_username_as(String username){
+	//	loginPage = PageFactory.initElements(driver, LoginPage.class);
+		loginPage.enterUserName(username);
 	}
 
 	@When("^User  enters password as \"([^\"]*)\"$")
-	public void user_enters_password_as(String password)  {
+	public void user_enters_password_as(String password){
 		loginPage.enterPassword(password);
 	}
 
@@ -49,7 +49,7 @@ public class LoginStepDefination extends TestBase {
 	}
 
 	@Then("^User should land on dashboard page$")
-	public void user_should_land_on_dashboard_page() throws IOException  {
+	public void user_should_land_on_dashboard_page() throws Throwable   {
 		Assert.assertEquals("Dashboard- iBilling", loginPage.getPageTitle());
 		takeScreenshot(driver);
 			}
@@ -77,8 +77,8 @@ public class LoginStepDefination extends TestBase {
 
 @After
 public void teardown() {
-	driver.close();
-	driver.quit();
+//	driver.close();
+//	driver.quit();
 }
 
 }

@@ -18,12 +18,12 @@ public class Databasepage {
 			// setting the properties for mysql
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			String sqlUrl = "jdbc:mysql://127.0.0.1:3306/october2021";
-			String username = "root";
+			String userName = "root";
 			String password = "root";
 			String query = "select *from users";
 
 			// Create connection to local database
-			connection = DriverManager.getConnection(sqlUrl, username, password);
+			connection = DriverManager.getConnection(sqlUrl, userName, password);
 
 			// Empower connection reference variable to execute queries
 			statement = connection.createStatement();
